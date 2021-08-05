@@ -35,12 +35,9 @@
 // Complete the rotLeft function below.
 function rotLeft(a, d) {
     let newArray = [];
-    // d = 1;
 
     for (let i = 0; i < a.length; i++) {
-        console.log('i: ', i);
-        console.log('a[i]: ', a[i]);
-        const movementLeft = i - d; // -1
+        const movementLeft = i - d;
         const proposedIndex = i - (movementLeft + (d - movementLeft));
         const adjustedIndex = proposedIndex < 0 ? a.length - Math.abs(proposedIndex) : proposedIndex;
 
