@@ -1,2 +1,6 @@
 .idea
 practice.html
+*/node_modules
+*/.cache
+*/build
+*/dist
