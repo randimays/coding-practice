@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+}
+
+header {
+    height: 40vh;
+    background-color: lightgrey;
+}
+
+header ul {
+    list-style: none;
+}
+
+.main-menu { 
+    display: flex;
+    justify-content: center;}
+
+.menu-item {
+    display: block;
+    padding: 20px 80px;
+    background-color: blue;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.menu-item:first-child {
+    border-right: 1px solid white;
+}
+
+.menu-item a {
+    margin-right: 16px;
+}
+
+/* https://www.w3schools.com/howto/howto_css_arrows.asp */
+.arrow {
+    display: inline-block;
+    margin-bottom: 3px;
+    padding: 3px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all .25s ease-in-out;
+}
+
+.active .arrow {
+    margin-bottom: 0;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.sub-menu {
+    max-height: 0;
+    background-color: white;
+    border: 1px solid black;
+    transition: max-height .25s ease-in-out;
+    overflow: hidden;
+}
+
+.active, .menu-item:hover {
+    background-color: green;
+}
+
+.active + .sub-menu {
+    max-height: 100%;
+}
+
+.sub-menu li:not(:last-child) {
+    padding-bottom: 12px;
+}
+
+.sub-menu li:last-child {
+    padding-bottom: 16px;
+}
+
+.sub-menu li:first-child {
+    padding-top: 16px;
+    font-weight: 700;
+}
