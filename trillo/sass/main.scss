@@ -115,7 +115,8 @@ body {
         }
     }
 
-    // user nav
+    //////////////////////////////////
+    /// USER NAVIGATION
     nav {
         display: flex;
         align-items: center;
@@ -172,12 +173,6 @@ body {
     display: flex;
 }
 
-.hotel-view {
-    height: 80vh;
-    flex-grow: 1;
-    background-color: #fff;
-}
-
 //////////////////////////////////
 /// SIDE NAVIGATION
 .sidebar {
@@ -185,7 +180,7 @@ body {
     justify-content: space-between;
     flex-direction: column;
     flex: 0 0 18%;
-    margin-top: 3.5rem;
+    padding-top: 3.5rem;
     font-size: 1.4rem;
     background-color: var(--color-gray-dark-1);
 
@@ -255,4 +250,123 @@ body {
     color: var(--color-gray-light-4);
     font-size: 1.2rem;
     text-align: center;
+}
+
+//////////////////////////////////
+/// HOTEL IMAGE GALLERY
+.hotel-view {
+    height: 80vh;
+    flex-grow: 1;
+    background-color: #fff;
+
+    .gallery {
+        display: flex;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+//////////////////////////////////
+/// HOTEL OVERVIEW
+.overview {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray-light-2);
+
+    h1 {
+        padding: 1.5rem 3rem;
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+    }
+
+    .overview__stars {
+        display: flex;
+        justify-content: center;
+        margin-right: auto;
+    }
+
+    .overview__stars svg,
+    .overview__location svg {
+        height: 1.75rem;
+        width: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    @keyframes pulsate {
+        0% {
+            transform: scale(1);
+            box-shadow: none;
+        }
+
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+        }
+
+        100% {
+            transform: scale(1);
+            box-shadow: none;
+        }
+    }
+
+    .overview__location {
+        display: flex;
+        font-size: 1.2rem;
+        align-items: center;
+
+        button {
+            display: inline-block;
+            padding-bottom: 2px;
+            border: none;
+            background: none;
+            color: var(--color-primary);
+            font-size: inherit;
+            border-bottom: 1px solid currentColor;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .2s;
+
+            &:hover {
+                color: var(--color-gray-dark-1);
+            }
+
+            &:focus {
+                outline: none;
+                animation: pulsate 1s infinite;
+            }
+        }
+
+        svg {
+            margin-right: .5rem;
+        }
+    }
+
+    .overview__rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        align-self: stretch;
+        margin-left: 3rem;
+        padding: 1rem 2.25rem 1.5rem;
+        color: #fff;
+        background-color: var(--color-primary);
+
+        span:first-child {
+            font-size: 2.25rem;
+            font-weight: 300;
+        }
+
+        span:last-child {
+            margin-top: -3px;
+            font-size: .8rem;
+            text-transform: uppercase;
+        }
+    }
 }
