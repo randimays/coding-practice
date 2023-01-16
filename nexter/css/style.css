@@ -27,6 +27,11 @@ h4 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
+.heading-1 {
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1; }
+
 .heading-2 {
   font-size: 4rem;
   font-style: italic;
@@ -76,13 +81,68 @@ h4 {
   margin-bottom: 8rem; }
 
 .sidebar {
+  display: flex;
+  justify-content: center;
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
   background-color: #c69963; }
 
+.nav-btn {
+  height: 2px;
+  width: 4.5rem;
+  margin-top: 4rem;
+  border: none;
+  border-radius: 0;
+  background-color: #fff; }
+  .nav-btn::before, .nav-btn::after {
+    display: block;
+    content: '';
+    height: 2px;
+    width: 4.5rem;
+    background-color: #fff; }
+  .nav-btn::before {
+    transform: translateY(-1.5rem); }
+  .nav-btn::after {
+    transform: translateY(1.3rem); }
+
 .header {
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  grid-row-gap: 1.5rem;
+  justify-content: center;
   grid-column: full-start / col-end 6;
-  background-color: #54483A; }
+  padding: 4rem 8rem 8rem;
+  background-color: #54483A;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center; }
+  .header__logo {
+    height: 3rem;
+    justify-self: center; }
+  .header__seenon-text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #aaa; }
+    .header__seenon-text::before, .header__seenon-text::after {
+      display: block;
+      content: '';
+      height: 1px;
+      background-color: currentColor; }
+  .header__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 3rem;
+    justify-items: center; }
+    .header__seenon-logos img {
+      height: 2.5rem;
+      filter: brightness(70%); }
+  .header .btn {
+    justify-self: start;
+    align-self: start; }
 
 .realtors {
   grid-column: col-start 7 / -1;
@@ -256,5 +316,31 @@ h4 {
     grid-column: 8 / -1; }
 
 .footer {
+  padding: 8rem;
   grid-column: full-start / full-end;
   background-color: #101d2c; }
+  .footer .nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+    list-style: none; }
+    .footer .nav__link:link, .footer .nav__link:visited {
+      display: block;
+      padding: 1.5rem;
+      font-size: 1.4rem;
+      color: #fff;
+      text-decoration: none;
+      font-family: "Josefin Sans", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      transition: all .2s; }
+    .footer .nav__link:hover, .footer .nav__link:active {
+      background-color: rgba(255, 255, 255, 0.05);
+      transform: translateY(-3px); }
+  .footer .copyright {
+    width: 70%;
+    margin: 6rem auto 0;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #aaa; }
