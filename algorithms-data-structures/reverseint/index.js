@@ -10,7 +10,9 @@
 //   reverseInt(-90) === -9
 
 const reverseint = number => {
+    const reversed = parseInt(number.toString().split('').reverse().join(''));
 
+    return reversed * Math.sign(number);
 };
 
 module.exports = reverseint;
