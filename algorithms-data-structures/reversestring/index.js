@@ -18,6 +18,7 @@ module.exports = reverse;
 //     return string.split('').reverse().join('');
 // };
 
+
 // Solution 2
 // const reverse = string => {
 //     let reversed = '';
