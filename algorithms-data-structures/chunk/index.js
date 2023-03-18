@@ -20,7 +20,7 @@ const chunk = (array, size) => {
 
 module.exports = chunk;
 
-// Solution 1
+// Solution 1 (my solution)
 // const chunk = (array, size) => {
 //     let result = [];
 

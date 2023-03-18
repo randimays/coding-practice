@@ -34,7 +34,7 @@ const steps = (n, row = 0, stair = '') => {
 
 module.exports = steps;
 
-// Solution 1
+// Solution 1 (my solution)
 // const steps = n => {
 //     for (let i = 1; i <= n; i++) {
 //         console.log(('#'.repeat(i)).padEnd(n, ' '))

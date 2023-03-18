@@ -23,7 +23,7 @@ const capitalize = string => {
 
 module.exports = capitalize;
 
-// Solution 1
+// Solution 1 (my solution)
 // const capitalize = string => {
 //     const array = string.split(' ');
 

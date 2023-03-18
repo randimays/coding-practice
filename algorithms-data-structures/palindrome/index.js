@@ -16,7 +16,7 @@ const palindrome = string => {
 
 module.exports = palindrome;
 
-// Solution 1
+// Solution 1 (my solution)
 // const palindrome = string => {
 //     const reversed = string.split('').reverse().join('');
 
