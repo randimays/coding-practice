@@ -8,19 +8,36 @@
 // Example:
 //   fib(4) === 3
 
-// Not at all performant!!
-const fibonacci = n => {
+const memoize = fn => {
+    const cache = {};
+
+    return (...args) => {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args);
+
+        cache[args] = result;
+
+        return result;
+    };
+};
+
+let fib = n => {
     if (n < 2) {
         return n;
     }
 
-    return fibonacci(n - 1) + fibonacci(n - 2);
+    return fib(n - 1) + fib(n - 2);
 };
 
-module.exports = fibonacci;
+fib = memoize(fib);
+
+module.exports = fib;
 
 // Solution 1 (my solution)
-// const fibonacci = (n, series = [], nextIndex = 2) => {
+// const fib = (n, series = [], nextIndex = 2) => {
 //     if (series[n]) {
 //         return series[n];
 //     }
@@ -34,11 +51,11 @@ module.exports = fibonacci;
 //     }
 
 //     nextIndex++;
-//     return fibonacci(n, series, nextIndex);
+//     return fib(n, series, nextIndex);
 // };
 
 // Solution 2
-// const fibonacci = n => {
+// const fib = n => {
 //     const result = [0, 1];
 
 //     for (let i = 2; i <= n; i++) {
