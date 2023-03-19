@@ -8,6 +8,7 @@
 // Example:
 //   fib(4) === 3
 
+// Not at all performant!!
 const fibonacci = n => {
     if (n < 2) {
         return n;
