@@ -118,21 +118,31 @@ class LinkedList {
     }
 
     removeAt(index) {
-        if (this.size() === 0) {
-            return null;
+        if (!this.head) {
+            return;
         }
 
         if (index === 0) {
             this.removeFirst();
+            return;
         }
 
         if (index === this.size() - 1) {
             this.removeLast();
+            return;
         }
 
         if (index > this.size() - 1) {
             return null;
         }
+
+        const previous = this.getAt(index - 1);
+
+        if (!previous) {
+            return;
+        }
+
+        previous.next = previous.next.next;
     }
 }
 
